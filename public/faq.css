@@ -1,0 +1,107 @@
+#faq-head{
+    font-family: Poppins;
+    font-size: 100px;
+    position: absolute;
+    left: 650px;
+    bottom: 550px;
+}
+#faq-line{
+    font-family: Poppins;
+    position: absolute;
+    left: 260px;
+    bottom: 550px;
+}
+#faq-1{
+    position: absolute;
+    top: 400px;
+    left: 30px;
+    width: 500px;
+    
+}
+#faq-1-head{
+    font-family: Poppins;
+    position: relative;
+    right: 200px;
+}
+#faq-1-content{
+    font-family: Poppins;
+    position: relative;
+    right: 220px;
+}
+#faq-2{
+    position: absolute;
+    top: 400px;
+    left: 1000px;
+    width: 500px;
+    
+}
+#faq-2-head{
+    font-family: Poppins;
+    position: relative;
+    right: 200px;
+}
+#faq-2-content{
+    font-family: Poppins;
+    position: relative;
+    right: 220px;
+}
+#faq-3{
+    position: absolute;
+    top: 600px;
+    left: 1000px;
+    width: 500px;
+    
+}
+#faq-3-head{
+    font-family: Poppins;
+    position: relative;
+    right: 200px;
+}
+#faq-3-content{
+    font-family: Poppins;
+    position: relative;
+    right: 220px;
+}
+#faq-4{
+    position: absolute;
+    top: 600px;
+    left: 20px;
+    width: 500px;
+    
+}
+#faq-4-head{
+    font-family: Poppins;
+    position: relative;
+    right: 200px;
+}
+#faq-4-content{
+    font-family: Poppins;
+    position: relative;
+    right: 220px;
+}
+#footer-line{
+    font-family: Poppins;
+    position: absolute;
+    bottom: 10px;
+    left: 600px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-family: Poppins;
+}
+#admin-button{
+    border-radius: 20px;
+    scale: 200%;
+    position: absolute;
+    left: 620px;
+    top: 790px;
+}
+#admin-button2{
+    border-radius: 20px;
+    scale: 200%;
+    position: absolute;
+    left: 820px;
+    top: 790px;
+}

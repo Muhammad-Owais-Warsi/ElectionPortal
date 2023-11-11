@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+
+<body>
+
+  <% var xValues=JSON.stringify(succ.map(item=> item.Names)); %>
+    <% var yValues=JSON.stringify(succ.map(item=> item.votingPercent)); %>
+
+      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+      <script>
+        // Unescape the JSON strings
+        var xValues = JSON.parse('<%- xValues %>');
+        var yValues = JSON.parse('<%- yValues %>');
+
+        // Extracting data from succ to form arrays
+
+        // var succ = [
+        //   { Names: 'CR1', votingPercent: 3 },
+        //   { Names: 'CR2', votingPercent: 1 },
+        //   { Names: 'CR3', votingPercent: 2 },
+        //   { Names: 'CR4', votingPercent: 1 }
+        // ];
+        // var xValues = succ.map(item => item.Names);
+        // var yValues = succ.map(item => item.votingPercent);
+        var Xvalues = xValues;
+        var Yvalues = yValues;
+
+
+
+        var barColors = ["red", "green", "blue", "orange"];
+
+
+        // Unescape the JSON strings
+        var xValues = JSON.parse('<%- xValues %>');
+        var yValues = JSON.parse('<%- yValues %>');
+
+        var barColors = ["red", "green", "blue", "orange"];
+
+        new Chart("myChart", {
+          type: "bar",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: "Votes"
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  suggestedMin: 0,  // Set your desired minimum value
+                  suggestedMax: 20  // Set your desired maximum value
+                }
+              }]
+            }
+          }
+        });
+      </script>
+
+
+</body>
+
+</html>

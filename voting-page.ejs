@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="public/voting-page.css">
+</head>
+
+<body>
+
+    <form method="post" action="/voting-page.ejs" id="my_form">
+
+        <input type="text" hidden id="final_name" value="" name="final_name">
+        <input type="text" hidden id="final_reg" value="" name="final_reg">
+        <input type="text" hidden id="voter_name" value="" name="voter_name">
+        <input type="text" hidden id="voter_reg" value="" name="voter_reg">
+        <input type="text" hidden id="voter_dept" value="" name="voter_dept">
+        <input type="text" hidden id="voter_sec" value="" name="voter_sec">
+        
+        <% succ.forEach((succ, index) => { %>
+            <% const crId = 'cr' + (index + 1); %>
+            <% const rollId = 'r' + (index + 1); %>
+        
+            <input type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
+            <input type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
+        <% }) %>
+        
+        
+        <!-- <label for="CR1" id="cr-head">CR-NAME</label>
+        <input type="text" readonly id="cr1" value="" name="cr1">
+        <input type="text" readonly id="cr2" value="" name="cr2">
+        <input type="text" readonly id="cr3" value="" name="cr3">
+        <input type="text" readonly id="cr4" value="" name="cr4">
+
+
+
+        <label id="roll-head"> Registration ID </label>
+        <input type="text" readonly id="r1" value="" name="r1">
+        <input type="text" readonly id="r2" value="" name="r2">
+        <input type="text" readonly id="r3" value="" name="r3">
+        <input type="text" readonly id="r4" value="" name="r4"> -->
+
+        <div style="position: absolute; left: 500px; top: 40px;">
+            <button class="vote" onclick="getName(0)">vote</button>
+            <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
+        </div>
+
+        <div style="position: relative; left: 492px; top: 55px;">
+            <button class="vote" onclick="getName(1)">vote</button>
+            <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
+        </div>
+
+        <div style="position: relative; left: 492px; top: 75px;">
+            <button class="vote" onclick="getName(2)">vote</button>
+            <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
+        </div>
+
+        <div style="position: relative; left: 492px; top: 100px;">
+            <button class="vote" onclick="getName(3)">vote</button>
+            <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
+        </div>
+
+        <button style="position: relative; top: 200px; left: 180px;" type="submit">SUBMIT</button>
+
+    </form>
+    <script>
+
+        const myform = document.getElementById("my_form");
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const reg = urlParams.get('reg');
+        const dept = urlParams.get('dept');
+        const sec = urlParams.get('sec')
+        document.getElementById("voter_name").value = name;
+        document.getElementById("voter_reg").value = reg;
+        document.getElementById('voter_dept').value = dept;
+        document.getElementById('voter_sec').value = sec;
+ 
+
+
+
+
+
+
+
+
+        function getName(index) {
+            event.preventDefault();
+            document.getElementById("final_name").value = document.getElementById("cr" + (index + 1)).value;
+            document.getElementById("final_reg").value = document.getElementById("r" + (index+1)).value;
+            disableVoteButtons()
+        }
+        // function getName2() {
+        //     event.preventDefault();
+        //     document.getElementById("final_name").value = document.getElementById("cr2").value;
+        //     disableVoteButtons()
+        // }
+        // function getName3() {
+        //     event.preventDefault();
+        //     document.getElementById("final_name").value = document.getElementById("cr3").value;
+        //     disableVoteButtons()
+        // }
+        // function getName4() {
+        //     event.preventDefault();
+        //     document.getElementById("final_name").value = document.getElementById("cr4").value;
+        //     disableVoteButtons()
+        // }
+
+        function disableVoteButtons() {
+            event.preventDefault();
+            const voteButton = document.querySelectorAll(".vote");
+            voteButton.forEach(btn => {
+                btn.disabled = true;
+            })
+        }
+
+        function EnableVoteButtons() {
+            event.preventDefault();
+            const voteButton = document.querySelectorAll(".vote");
+            voteButton.forEach(btn => {
+                btn.disabled = false;
+            })
+        }
+
+        myform.addEventListener("submit", () => {
+            event.preventDefault();
+
+            if (document.getElementById("final_name").value === "") {
+                alert("missing field");
+            } else {
+                myform.submit();
+            }
+        })
+    </script>
+</body>
+
+</html>

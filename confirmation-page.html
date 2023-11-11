@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="public/confirmation-page.css">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        <div>
+        
+        <i class="fa-solid fa-circle-check fa-2xl" id="confirm-sign" ></i>
+        <h1 id="confirm-head">Submission Confirmed</h1>
+        <h3 id="confirm-para">Thank you for your submission, your vote has been submitted. Click the link below to return back to homepage</h3>
+        <a id="homepage-link" href="login-page.html">Back to homepage</a>
+        </div>
+
+
+
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const roll = urlParams.get('reg');
+            const final_name = urlParams.get('final_name');
+            const final_reg = urlParams.get('final_reg');
+
+            document.write(`<p>${name} having regNo. ${roll}  voted ${final_name} having regNo ${final_reg}  </p>`);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+#cr1{
+    position: relative;
+    top: 30px;
+    left: -80px;
+}
+#cr2{
+    position: absolute;
+    top: 80px;
+    left: 5px;
+}
+#cr3{
+    position: relative;
+    top: 120px;
+    left: -253px;
+}
+#cr4{
+    position: relative;
+    top: 165px;
+    left: -427px;
+}
+#cr5{
+    position: relative;
+    top: 210px;
+    left: -603px;
+}
+#cr6{
+    position: relative;
+    top: 250px;
+    left: -777px;
+}
+
+#roll-head{
+    position: absolute;
+    left: 300px;
+}
+#r1{
+    position: relative;
+    top: 30px;
+    left: -350px;
+}
+#r2{
+    position: relative;
+    top: 75px;
+    left: -522px;
+
+}
+#r3{
+    position: relative;
+    top: 120px;
+    left: -695px;
+}
+#r4{
+    position: relative;
+    top: 165px;
+    left: -870px;
+}
