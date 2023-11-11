@@ -6,6 +6,7 @@ const ejs = require('ejs');
 
 
 
+
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
