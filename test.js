@@ -64,6 +64,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/login-page.html");
 })
 
+
 app.get('/login-page.html', (req, res) => {
     res.redirect('/');
 });
@@ -73,7 +74,7 @@ app.post("/login-page.html", (req, res) => {
     const name = req.body.username;
     const dept = req.body.dept;
     const section = req.body.section;
-    
+
     const checkQuery = 'SELECT RegNo FROM new_test_table WHERE RegNo = (?)';
     con.query(checkQuery, [regNo], (err, succ) => {
         if (err) res.send("/invalid.html")
