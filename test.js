@@ -1,10 +1,6 @@
-
 const mysql = require('mysql');
 const express = require('express');
 const ejs = require('ejs');
-
-
-
 
 
 var con = mysql.createConnection({
@@ -22,32 +18,6 @@ con.connect(function (err) {
         if (err) res.send("/invalid.html");
         else console.log("table created");
     })
-    // con.query("CREATE TABLE IF NOT EXISTS cr_test_table (RegNo VARCHAR(255) PRIMARY KEY ,Names VARCHAR(255) ,Dept VARCHAR(255) ,Section VARCHAR(255))", (err, succ) => {
-    //     if (err) throw err;
-    //     else {
-    //         // const crData = `INSERT INTO cr_test_table (RegNo,Names,Dept,Section) VALUES
-    //         // ('A1', 'CR1', 'CSE', 'A'),
-    //         // ('A2', 'CR1', 'CSE', 'A'),
-    //         // ('A3', 'CR1', 'CSE', 'A'),
-    //         // ('A4', 'CR1', 'CSE', 'A'),
-    //         // ('B1', 'CR1', 'CSE', 'B'),
-    //         // ('B2', 'CR1', 'CSE', 'B'),
-    //         // ('B3', 'CR1', 'CSE', 'B'),
-    //         // ('B4', 'CR1', 'CSE', 'B')
-    //         // `;
-
-    //         // con.query(crData, (err, succ) => {
-    //         //     if (err) throw err;
-    //         //     else console.log("cr values inserted");
-    // })
-
-    //     }
-    // })
-
-
-
-
-
 
 
 });
@@ -75,7 +45,7 @@ app.post("/login-page.html", (req, res) => {
     const dept = req.body.dept;
     const section = req.body.section;
 
-    
+
     const checkQuery = 'SELECT RegNo FROM new_test_table WHERE RegNo = (?)';
     con.query(checkQuery, [regNo], (err, succ) => {
         if (err) res.send("/invalid.html")
@@ -86,24 +56,15 @@ app.post("/login-page.html", (req, res) => {
             else {
 
                 res.redirect(`/voting-page.ejs?name=${name}&reg=${regNo}&dept=${dept}&sec=${section}`);
-                // const insertQuery = 'INSERT INTO new_test_table (RegNo, Names, Dept, Section) VALUES (?, ?, ?, ?)';
 
-                // con.query(insertQuery, [regNo, name, dept, section], (err, succ) => {
-                //     if (err) console.log(err);
-                //     else {
-                //         console.log("inserted");
-                //         res.redirect(`/voting-page.ejs?name=${name}&reg=${regNo}&dept=${dept}&sec=${section}`);
-                //     }
-                // })
             }
         }
     })
 
 
 
-
-
 })
+
 
 app.post("/voting-page.ejs", (req, res) => {
     const final_name = req.body.final_name;
@@ -129,23 +90,13 @@ app.post("/voting-page.ejs", (req, res) => {
     })
 
 
-
-
-
-
-
-   
 })
 
 
 app.get("/voting-page.ejs", (req, res) => {
 
-
-
     const section = req.query.sec;
-
     const searchQuery = 'SELECT RegNo, Names FROM cr_test_table WHERE Section = (?)';
-
 
     con.query(searchQuery, [section], (err, succ) => {
         if (err) res.sendFile(__dirname + '/invalid-page.html')
@@ -182,6 +133,6 @@ app.get("/result-page.ejs", (req, res) => {
 
 
 
-app.listen(8001, () => {
+app.listen(8002, () => {
     console.log("started");
 })
