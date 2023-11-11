@@ -127,6 +127,7 @@ app.post("/admin-login.html",(req,res)=>{
     })
 })
 
+
 app.get("/result-page.ejs", (req, res) => {
     res.render("result-page.ejs", { succ });
 });
