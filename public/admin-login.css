@@ -40,6 +40,27 @@
 .submit-button{
     position: absolute;
     top: 500px;
-    left: 330px;
+    left: 300px;
+    width: 200px;
+    height: 60px;
     font-size: xx-large;
+    border-radius: 20px;
+    transition-duration: 0.8s;
+}
+.submit-button:hover{
+    color: white;
+    background-color: black;
+}
+#admin-logo{
+    scale: 550%;
+    position: absolute;
+    top: 130px;
+    left: 380px;
+}
+#admin-head{
+    font-family: Poppins;
+    position: absolute;
+    left: 280px;
+    top: -130px;
+    text-decoration: underline;
 }
