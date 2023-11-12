@@ -12,7 +12,7 @@ var con = mysql.createConnection({
 
 
 con.connect(function (err) {
-    if (err) throw err;
+    if (err) res.sendFile(__dirname + "/invalid-page.html");
     console.log("Connected!");
     con.query("CREATE TABLE IF NOT EXISTS new_test_table (RegNo VARCHAR(255) PRIMARY KEY ,Names VARCHAR(255) ,Dept VARCHAR(255) ,Section VARCHAR(255))", (err, succ) => {
         if (err) res.send("/invalid.html");
@@ -39,9 +39,6 @@ app.get('/', (req, res) => {
 
 app.post("/login-page.html", (req, res) => {
 
-
-
-
     const regNo = req.body.registerNo;
     const name = req.body.username;
     const dept = req.body.dept;
@@ -50,7 +47,7 @@ app.post("/login-page.html", (req, res) => {
 
     const checkQuery = 'SELECT RegNo FROM new_test_table WHERE RegNo = (?)';
     con.query(checkQuery, [regNo], (err, succ) => {
-        if (err) res.send("/invalid.html")
+        if (err) res.send("/invalid.html") // Add already voted page
         else {
             if (succ.length > 0) {
                 res.sendFile(__dirname + "/invalid-page.html")
@@ -74,6 +71,7 @@ app.get("/login-page.html", (req, res) => {
 
 
 app.post("/voting-page.ejs", (req, res) => {
+
     const final_name = req.body.final_name;
     const final_reg = req.body.final_reg;
     const name = req.body.voter_name;
@@ -89,7 +87,7 @@ app.post("/voting-page.ejs", (req, res) => {
     const insertQuery = 'INSERT INTO new_test_table (RegNo, Names, Dept, Section) VALUES (?, ?, ?, ?)';
 
     con.query(insertQuery, [reg, name, dept, sec], (err, succ) => {
-        if (err) res.sendFile(__dirname + "/invalid-page.html")
+        if (err) res.sendFile(__dirname + "/invalid-page.html") // already voted page
         else {
             console.log("inserted");
             res.redirect(`/confirmation-page.html?name=${name}&reg=${reg}&final_name=${final_name}&final_reg=${final_reg}`);
@@ -145,7 +143,6 @@ app.get("/faq.html",(req,res)=>{
 app.get("/result-page.ejs", (req, res) => {
     res.render("result-page.ejs", { succ });
 });
-
 
 
 

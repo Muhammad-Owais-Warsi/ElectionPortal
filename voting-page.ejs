@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
 
 <head>
@@ -33,20 +30,6 @@
             <input type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
         <% }) %>
         
-        
-        <!-- <label for="CR1" id="cr-head">CR-NAME</label>
-        <input type="text" readonly id="cr1" value="" name="cr1">
-        <input type="text" readonly id="cr2" value="" name="cr2">
-        <input type="text" readonly id="cr3" value="" name="cr3">
-        <input type="text" readonly id="cr4" value="" name="cr4">
-
-
-
-        <label id="roll-head"> Registration ID </label>
-        <input type="text" readonly id="r1" value="" name="r1">
-        <input type="text" readonly id="r2" value="" name="r2">
-        <input type="text" readonly id="r3" value="" name="r3">
-        <input type="text" readonly id="r4" value="" name="r4"> -->
 
         <div style="position: absolute; left: 500px; top: 40px;">
             <button class="vote" onclick="getName(0)">vote</button>
@@ -86,33 +69,12 @@
  
 
 
-
-
-
-
-
-
         function getName(index) {
             event.preventDefault();
             document.getElementById("final_name").value = document.getElementById("cr" + (index + 1)).value;
             document.getElementById("final_reg").value = document.getElementById("r" + (index+1)).value;
             disableVoteButtons()
         }
-        // function getName2() {
-        //     event.preventDefault();
-        //     document.getElementById("final_name").value = document.getElementById("cr2").value;
-        //     disableVoteButtons()
-        // }
-        // function getName3() {
-        //     event.preventDefault();
-        //     document.getElementById("final_name").value = document.getElementById("cr3").value;
-        //     disableVoteButtons()
-        // }
-        // function getName4() {
-        //     event.preventDefault();
-        //     document.getElementById("final_name").value = document.getElementById("cr4").value;
-        //     disableVoteButtons()
-        // }
 
         function disableVoteButtons() {
             event.preventDefault();
@@ -134,7 +96,7 @@
             event.preventDefault();
 
             if (document.getElementById("final_name").value === "") {
-                alert("missing field");
+                alert("Missing fields");
             } else {
                 myform.submit();
             }
