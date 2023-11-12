@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+#confirm-sign{
+    position: absolute;
+    top: 70px;
+    left: 630px;
+    scale: 150%;
+}
+#confirm-head{
+    font-family: Poppins;
+    position: absolute;
+    top: 300px;
+    left: 500px;
+    font-size: 70px;
+}
+#confirm-para{
+    font-family: Poppins;
+    position: absolute;
+    top: 500px;
+    left: 345px;
+}
+#homepage-link{
+    text-decoration: none;
+    font-family: Poppins;
+    position: relative;
+    top: 650px;
+    left: 650px;
+    color: dodgerblue;
+}
+#homepage-link:hover{
+    text-decoration: underline;
+    
+}
+a{
+    text-decoration: none;
+    color: dodgerblue;
+}
+a:hover{
+    text-decoration: underline;
+}
