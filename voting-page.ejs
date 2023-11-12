@@ -22,14 +22,14 @@
         <input type="text" hidden id="voter_dept" value="" name="voter_dept">
         <input type="text" hidden id="voter_sec" value="" name="voter_sec">
         
-        <!--<% succ.forEach((succ, index) => { %>
+        <% succ.forEach((succ, index) => { %>
             <% const crId = 'cr' + (index + 1); %>
             <% const rollId = 'r' + (index + 1); %>
         
             <input type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
             <input type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
-        <% }) %>-->
-        <div style="position: absolute; left: 600px;">
+        <% }) %>
+        <!--<div style="position: absolute; left: 600px;">
             <input type=" readonly" id="cr1" value="">
             <input type=" readonly" id="cr2" value="">
             <input type=" readonly" id="cr3" value="">
@@ -40,8 +40,8 @@
             <input type=" readonly" id="r2" value="">
             <input type=" readonly" id="r3" value="">
             <input type=" readonly" id="r4" value="">
-
-        </div>
+        
+        </div>-->
 
         <div style="position: absolute; left: 950px; top: 250px;">
             <button class="vote" onclick="getName(0)">vote</button>
