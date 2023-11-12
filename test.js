@@ -47,10 +47,10 @@ app.post("/login-page.html", (req, res) => {
 
     const checkQuery = 'SELECT RegNo FROM new_test_table WHERE RegNo = (?)';
     con.query(checkQuery, [regNo], (err, succ) => {
-        if (err) res.send("/invalid.html") // Add already voted page
+        if (err) res.send("/invalid.html") 
         else {
             if (succ.length > 0) {
-                res.sendFile(__dirname + "/invalid-page.html")
+                res.sendFile(__dirname + "/vote-submitted.html")
             }
             else {
 
@@ -87,7 +87,7 @@ app.post("/voting-page.ejs", (req, res) => {
     const insertQuery = 'INSERT INTO new_test_table (RegNo, Names, Dept, Section) VALUES (?, ?, ?, ?)';
 
     con.query(insertQuery, [reg, name, dept, sec], (err, succ) => {
-        if (err) res.sendFile(__dirname + "/invalid-page.html") // already voted page
+        if (err) res.sendFile(__dirname + "/vote-submitted.html") 
         else {
             console.log("inserted");
             res.redirect(`/confirmation-page.html?name=${name}&reg=${reg}&final_name=${final_name}&final_reg=${final_reg}`);

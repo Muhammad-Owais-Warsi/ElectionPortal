@@ -32,3 +32,10 @@ body{
     text-decoration: underline;
     
 }
+a{
+    text-decoration: none;
+    color: dodgerblue;
+}
+a:hover{
+    text-decoration: underline;
+}
