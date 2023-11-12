@@ -43,3 +43,16 @@
     left: 330px;
     font-size: xx-large;
 }
+#admin-logo{
+    scale: 550%;
+    position: absolute;
+    top: 130px;
+    left: 380px;
+}
+#admin-head{
+    font-family: Poppins;
+    position: absolute;
+    left: 280px;
+    top: -130px;
+    text-decoration: underline;
+}
