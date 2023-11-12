@@ -12,13 +12,17 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="public/login-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
 </head>
 
 <body>
-    <div class="login-card"  style="position: absolute;top: 100px;left: 370px">
+    <div class="login-card"  style="position: absolute;top: 130px;left: 400px">
 
         <form method="post" action="/login-page.html" id="my-form">
-            <h1 style="font-family: monospace; scale: 120%;">USER LOGIN</h1>
+        <h1 id="login-head" style="font-family: Poppins; scale: 200%;">USER LOGIN</h1>
+        <i id="login-logo" class="fa-regular fa-user fa-2xl" style="color: #050505;"></i>
             <label for="name"></label>
             <input type="text" class="name-input" placeholder="Username" id="name" name="username">
 
