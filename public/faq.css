@@ -11,78 +11,11 @@
     left: 260px;
     bottom: 550px;
 }
-#faq-1{
-    position: absolute;
-    top: 400px;
-    left: 30px;
-    width: 500px;
-    
-}
-#faq-1-head{
-    font-family: Poppins;
-    position: relative;
-    right: 200px;
-}
-#faq-1-content{
-    font-family: Poppins;
-    position: relative;
-    right: 220px;
-}
-#faq-2{
-    position: absolute;
-    top: 400px;
-    left: 1000px;
-    width: 500px;
-    
-}
-#faq-2-head{
-    font-family: Poppins;
-    position: relative;
-    right: 200px;
-}
-#faq-2-content{
-    font-family: Poppins;
-    position: relative;
-    right: 220px;
-}
-#faq-3{
-    position: absolute;
-    top: 600px;
-    left: 1000px;
-    width: 500px;
-    
-}
-#faq-3-head{
-    font-family: Poppins;
-    position: relative;
-    right: 200px;
-}
-#faq-3-content{
-    font-family: Poppins;
-    position: relative;
-    right: 220px;
-}
-#faq-4{
-    position: absolute;
-    top: 600px;
-    left: 20px;
-    width: 500px;
-    
-}
-#faq-4-head{
-    font-family: Poppins;
-    position: relative;
-    right: 200px;
-}
-#faq-4-content{
-    font-family: Poppins;
-    position: relative;
-    right: 220px;
-}
+
 #footer-line{
     font-family: Poppins;
     position: absolute;
-    bottom: 10px;
+    bottom: -200px;
     left: 600px;
 }
 
@@ -90,18 +23,64 @@ a{
     text-decoration: none;
     color: black;
     font-family: Poppins;
+    transition-duration: 0.8s;
+}
+a:hover{
+    color: white;
 }
 #admin-button{
     border-radius: 20px;
     scale: 200%;
     position: absolute;
     left: 620px;
-    top: 790px;
+    bottom: -250px;
+    transition-duration: 0.8s;
+
+}
+#admin-button:hover{
+    background-color: black;
 }
 #admin-button2{
     border-radius: 20px;
     scale: 200%;
     position: absolute;
     left: 820px;
-    top: 790px;
+    bottom: -250px;
+    transition-duration: 0.8s;
+}
+#admin-button2:hover{
+    background-color: black;
+}
+
+.accordion{
+    background-color: #000000;  
+    cursor: pointer;
+    padding: 18px;
+    outline: none;
+    transition: 0.5s;
+    text-align: left;
+    width: 50%;
+    color: white;
+    font-family: Poppins;
+}
+
+.active, .accordion:hover{
+    background-color: #e0e0e0;
+    color: rgb(0, 0, 0);
+}
+.panel{
+    display: none;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    padding: 0 18px;
+    color:#e0e0ee;
+    width: 44.70%;
+    font-family: Poppins;
+}
+#grouping-panel{
+    width: 44.2%;
+    position: absolute;
+    top: 350px;
+    left: 680px;
+    scale: 150%;
 }

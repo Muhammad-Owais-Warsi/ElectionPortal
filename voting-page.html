@@ -22,36 +22,48 @@
         <input type="text" hidden id="voter_dept" value="" name="voter_dept">
         <input type="text" hidden id="voter_sec" value="" name="voter_sec">
         
-        <% succ.forEach((succ, index) => { %>
+        <!--<% succ.forEach((succ, index) => { %>
             <% const crId = 'cr' + (index + 1); %>
             <% const rollId = 'r' + (index + 1); %>
         
             <input type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
             <input type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
-        <% }) %>
-        
+        <% }) %>-->
+        <div style="position: absolute; left: 600px;">
+            <input type=" readonly" id="cr1" value="">
+            <input type=" readonly" id="cr2" value="">
+            <input type=" readonly" id="cr3" value="">
+            <input type=" readonly" id="cr4" value="">
 
-        <div style="position: absolute; left: 500px; top: 40px;">
+
+            <input type=" readonly" id="r1" value="">
+            <input type=" readonly" id="r2" value="">
+            <input type=" readonly" id="r3" value="">
+            <input type=" readonly" id="r4" value="">
+
+        </div>
+
+        <div style="position: absolute; left: 950px; top: 250px;">
             <button class="vote" onclick="getName(0)">vote</button>
             <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
         </div>
 
-        <div style="position: relative; left: 492px; top: 55px;">
+        <div style="position: absolute; left: 950px; top: 350px;">
             <button class="vote" onclick="getName(1)">vote</button>
             <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
         </div>
 
-        <div style="position: relative; left: 492px; top: 75px;">
+        <div style="position: absolute; left: 950px; top: 450px;">
             <button class="vote" onclick="getName(2)">vote</button>
             <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
         </div>
 
-        <div style="position: relative; left: 492px; top: 100px;">
+        <div style="position: absolute; left: 950px; top: 550px;">
             <button class="vote" onclick="getName(3)">vote</button>
             <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
         </div>
 
-        <button style="position: relative; top: 200px; left: 180px;" type="submit">SUBMIT</button>
+        <button style="position: absolute; top: 650px; left: 600px;" type="submit">SUBMIT</button>
 
     </form>
     <script>

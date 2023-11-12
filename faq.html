@@ -17,42 +17,31 @@
     <body>
         <h1 id="faq-head">FAQ</h1>
         <h3 id="faq-line">Welcome to the FAQ section, please make sure you go through each of them for a smooth voting process</h3>
-        <button id="faq-1" ><details>
-            <summary id="faq-1-head">
-                Hello world.
-            </summary>
-            <div id="faq-1-content">
-                Hi bro.
+        
+        <div id="grouping-panel">
+            <button class="accordion">Why am i seeing the invalid page?</button>
+            <div class="panel">
+                <p>If you're seeing the invalid page, its either because of server issues or the website could'nt fetch the information you're looking for.</p>
             </div>
-        </details>
-        </button>
-        <button id="faq-2" ><details>
-            <summary id="faq-2-head">
-                Hello world.
-            </summary>
-            <div id="faq-2-content">
-                Hi bro.
+
+            
+            <button class="accordion">Who can see the election results?</button>
+            <div class="panel">
+                <p>The election results will not be visible, only to the admins who have access and control to the database which fetches the data to them.</p>
             </div>
-        </details>
-        </button>
-        <button id="faq-3" ><details>
-            <summary id="faq-3-head">
-                Hello world.
-            </summary>
-            <div id="faq-3-content">
-                Hi bro.
+
+            
+            <button class="accordion">Who are eligible to vote?</button>
+            <div class="panel">
+                <p>Students from their CR's class can only vote their respective CR, and also students who are registered into this site. For queries check out the login page.</p>
             </div>
-        </details>
-        </button>
-        <button id="faq-4" ><details>
-            <summary id="faq-4-head">
-                Hello world.
-            </summary>
-            <div id="faq-4-content">
-                Hi bro.
+
+            <button class="accordion">Can anyone manipulate the number of votes?</button>
+            <div class="panel">
+                <p>No, no third-party users can manipulate the number of votes as its securely stored in the database. </p>
             </div>
-        </details>
-        </button>
+
+        </div>
 
         <h3 id="footer-line">For more queries, shoot an e-mail.</h3>
         <!--[if lt IE 7]>
@@ -67,6 +56,25 @@
 
 
 
-        <script src="" async defer></script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+            for (i = 0; i < acc.length; i++){
+                acc[i].addEventListener("click",function() {
+
+                this.classList.toggle("active");
+
+
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+            }
+                else{
+                    panel.style.display = "block"
+            }
+
+        });
+}  
+        </script>
     </body>
 </html>

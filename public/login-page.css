@@ -48,8 +48,17 @@
 .submit-button{
     position: absolute;
     top: 500px;
-    left: 330px;
+    left: 300px;
     font-size: xx-large;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    transition-duration: 0.8s;
+}
+
+.submit-button:hover{
+    color: white;
+    background-color: black;
 }
 #login-logo{
     scale: 550%;
