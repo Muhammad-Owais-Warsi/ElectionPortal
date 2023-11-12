@@ -11,7 +11,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="admin-login.css">
+    <link rel="stylesheet" href="public/admin-login.css">
 </head>
 
 <body>
@@ -49,7 +49,7 @@
             const id_input = document.querySelector(".id-input").value;
             const sec_input = document.querySelector(".sec-input").value;
             const dept_input = document.querySelector(".dept-input").value;
-            if (id_input === "" || sec_input === "" || dept_input === "") {
+            if (id_input === "" || sec_input === "" || dept_input === "" || id_input!=="12345")  {
                 alert("Check the details");
             } else if (id_input === "12345" && sec_input !== "" && dept_input !== "") {
                 admin_form.submit();
