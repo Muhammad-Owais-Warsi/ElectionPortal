@@ -1,3 +1,19 @@
+*{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+ width: 12px;
+
+}
+
+::-webkit-scrollbar-track{
+    background-color: grey;
+}
+::-webkit-scrollbar-thumb{
+    background-color: dodgerblue;
+}
+
 body{
     background-color: #f9f9fe;
 }
@@ -54,26 +70,22 @@ li a:hover{
 #paragraph:hover{
     cursor: default;
 }
-#vote-link{
 
-    text-decoration: none;
-    color: black;
-    font-family: Poppins;
-    transition-duration: 0.7s;
-}
-#vote-link:hover{
-    color: white;
-}
 #vote-button{
     border-radius: 20px;
     scale: 200%;
     position: absolute;
     top: 600px;
     left: 1100px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
     transition-duration: 0.7s;
+    font-family: Poppins;
 }
 #vote-button:hover{
     background-color: dodgerblue;
+    
 }
 #logo{
     scale: 11%;
@@ -125,8 +137,15 @@ li a:hover{
     left: 300px;
     margin-bottom: 10px ;
     height: 300px;
-    
-
+}
+#owais-pic{
+    position: absolute;
+    border-radius: 50%;
+    filter: grayscale(50%);
+    top: 2050px;
+    left: 300px;
+    height: 300px;
+    width: 300px;
 }
 #card-1-name{
     font-family: Poppins;
@@ -152,9 +171,19 @@ li a:hover{
     left: 300px;
     margin-bottom: 10px ;
     height: 300px;
-    
-
 }
+
+#deboneil-pic{
+    position: absolute;
+    border-radius: 50%;
+    filter: grayscale(50%);
+    top: 2500px;
+    left: 300px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
 #card-2-name{
     font-family: Poppins;
     position: absolute;
@@ -179,8 +208,15 @@ li a:hover{
     left: 300px;
     margin-bottom: 10px ;
     height: 300px;
-    
-
+}
+#aditya-pic{
+    position: absolute;
+    border-radius: 50%;
+    filter: grayscale(50%);
+    top: 2950px;
+    left: 300px;
+    height: 300px;
+    width: 300px;
 }
 #card-3-name{
     font-family: Poppins;
@@ -206,9 +242,20 @@ li a:hover{
     left: 300px;
     margin-bottom: 10px ;
     height: 300px;
-    
 
 }
+
+#anirban-pic{
+    position: absolute;
+    border-radius: 50%;
+    filter: grayscale(50%);
+    top: 3350px;
+    left: 300px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
 #card-4-name{
     font-family: Poppins;
     position: absolute;
@@ -283,5 +330,7 @@ li a:hover{
     top: 300px;
     left: 520px;
 }
+
+
 
 
