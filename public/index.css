@@ -138,6 +138,14 @@ li a:hover{
     margin-bottom: 10px ;
     height: 300px;
 }
+#owais-git{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 2250px;
+    left: 650px;
+    
+}
 #owais-pic{
     position: absolute;
     border-radius: 50%;
@@ -171,6 +179,15 @@ li a:hover{
     left: 300px;
     margin-bottom: 10px ;
     height: 300px;
+}
+
+#deboneil-git{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 2700px;
+    left: 650px;
+    
 }
 
 #deboneil-pic{
@@ -330,6 +347,7 @@ li a:hover{
     top: 300px;
     left: 520px;
 }
+
 
 
 
