@@ -29,11 +29,22 @@
             <label for="id"></label>
             <input type="text" class="id-input" placeholder="Registration Id" autocomplete="off" id="id" name="registerNo">
 
-            <label for="section"></label>
-            <input type="text" class="sec-input" placeholder="Section" autocomplete="off" id="sec" name="section">
+            <select id="sec" name="department" class="sec-input">
+                <option value="" selected disabled hidden>Choose Section</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="F">F</option>
+            </select>
 
-            <label for="department"></label>
-            <input type="text" class="dept-input" placeholder="Department" autocomplete="off" id="dept" name="dept">
+            <!-- <label for="section"></label>
+            <input type="text" class="sec-input" placeholder="Section" id="sec" name="section"> -->
+
+            <select id="dept" name="department" class="dept-input">
+                <option value="" selected disabled hidden>Choose Department </option>
+                <option value="CSE">CSE</option>
+            </select>
+            <!-- <label for="department"></label>
+            <input type="text" class="dept-input" placeholder="Department" id="dept" name="dept"> -->
 
             <button style="font-family: monospace;" class="submit-button" type="submit">SUBMIT</button>
 
