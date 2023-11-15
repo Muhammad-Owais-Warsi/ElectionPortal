@@ -7,15 +7,16 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "1234",
-    database: "test"
+    database:"mydb"
 });
+
 
 
 con.connect(function (err) {
     if (err) res.sendFile(__dirname + "/invalid-page.html");
     console.log("Connected!");
     con.query("CREATE TABLE IF NOT EXISTS new_test_table (RegNo VARCHAR(255) PRIMARY KEY ,Names VARCHAR(255) ,Dept VARCHAR(255) ,Section VARCHAR(255))", (err, succ) => {
-        if (err) res.send("/invalid.html");
+        if (err) res.sendFile(__dirname + "/invalid.html");
         else console.log("table created");
     })
 
@@ -47,7 +48,7 @@ app.post("/login-page.html", (req, res) => {
 
     const checkQuery = 'SELECT RegNo FROM new_test_table WHERE RegNo = (?)';
     con.query(checkQuery, [regNo], (err, succ) => {
-        if (err) res.send("/invalid.html") 
+        if (err) res.send("/invalid.html")
         else {
             if (succ.length > 0) {
                 res.sendFile(__dirname + "/vote-submitted.html")
@@ -79,20 +80,23 @@ app.post("/voting-page.ejs", (req, res) => {
     const dept = req.body.voter_dept;
     const sec = req.body.voter_sec;
 
-    const crUpdate = 'UPDATE cr_test_table SET votingPercent = votingPercent+1 WHERE RegNo=(?)';
-    con.query(crUpdate, [final_reg], (err, succ) => {
-        if (err) res.sendFile(__dirname + "/invalid-page.html");
-        else console.log("crUpdated")
-    })
     const insertQuery = 'INSERT INTO new_test_table (RegNo, Names, Dept, Section) VALUES (?, ?, ?, ?)';
 
     con.query(insertQuery, [reg, name, dept, sec], (err, succ) => {
-        if (err) res.sendFile(__dirname + "/vote-submitted.html") 
+        if (err) res.sendFile(__dirname + "/vote-submitted.html")
         else {
             console.log("inserted");
+            const crUpdate = 'UPDATE cr_test_table SET votingPercent = votingPercent+1 WHERE RegNo=(?)';
+            con.query(crUpdate, [final_reg], (err, succ) => {
+                if (err) res.sendFile(__dirname + "/invalid-page.html");
+                else console.log("crUpdated")
+            })
             res.redirect(`/confirmation-page.html?name=${name}&reg=${reg}&final_name=${final_name}&final_reg=${final_reg}`);
         }
     })
+
+
+
 
 
 })
@@ -132,11 +136,11 @@ app.post("/admin-login.html", (req, res) => {
     })
 })
 
-app.get("/admin-login.html",(req,res)=>{
+app.get("/admin-login.html", (req, res) => {
     res.sendFile(__dirname + "/admin-login.html");
 })
 
-app.get("/faq.html",(req,res)=>{
+app.get("/faq.html", (req, res) => {
     res.sendFile(__dirname + "/faq.html");
 })
 
