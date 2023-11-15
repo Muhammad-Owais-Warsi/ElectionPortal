@@ -30,11 +30,18 @@
             <i id="admin-logo" class="fa-solid fa-user-tie fa-2xl" style="color: #000000;"></i>
 
 
-            <input type="password" class="id-input" placeholder="Admin ID" name="id_input">
+            <input type="password" class="id-input" placeholder="Admin ID" autocomplete="" name="id_input">
 
-            <input type="text" class="sec-input" placeholder="Section" name="sec_input">
+            <button class="sec-input">
+            <label id="sec-label" >Select your section</label>
+            <select name="sec-input" id="sec-option">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="F">F</option>
+            </select></button>
+            <!-- <input type="text" class="sec-input" placeholder="Section" autocomplete="off" name="sec_input"> -->
 
-            <input type="text" class="dept-input" placeholder="Department" name="dept-_input">
+            <input type="text" class="dept-input" placeholder="Department" autocomplete="off" name="dept-_input">
 
             <button style="font-family: monospace;" class="submit-button" type="submit">SUBMIT</button>
 
@@ -55,11 +62,11 @@
         admin_form.addEventListener("submit", (event) => {
             event.preventDefault();
             const id_input = document.querySelector(".id-input").value;
-            const sec_input = document.querySelector(".sec-input").value;
+            const sec_input = document.querySelector(".sec-option").value;
             const dept_input = document.querySelector(".dept-input").value;
-            if (id_input === "" || sec_input === "" || dept_input === "" || id_input!=="12345")  {
+            if (id_input === "" || sec_input.value === "" || dept_input === "" || id_input!=="12345")  {
                 alert("Check the details");
-            } else if (id_input === "12345" && sec_input !== "" && dept_input !== "") {
+            } else if (id_input === "12345" && sec_input.value !== "" && dept_input !== "") {
                 admin_form.submit();
             }
 
