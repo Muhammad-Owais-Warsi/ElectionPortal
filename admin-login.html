@@ -30,15 +30,13 @@
             <i id="admin-logo" class="fa-solid fa-user-tie fa-2xl" style="color: #000000;"></i>
 
 
-            <input type="password" class="id-input" placeholder="Admin ID" autocomplete="" name="id_input">
+            <input type="password" class="id-input" placeholder="Admin ID" autocomplete="off" name="id_input">
 
-            <button class="sec-input">
-            <label id="sec-label" >Select your section</label>
-            <select name="sec-input" id="sec-option">
+            <select name="" class="sec-input">
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="F">F</option>
-            </select></button>
+            </select>
             <!-- <input type="text" class="sec-input" placeholder="Section" autocomplete="off" name="sec_input"> -->
 
             <input type="text" class="dept-input" placeholder="Department" autocomplete="off" name="dept-_input">
@@ -62,11 +60,11 @@
         admin_form.addEventListener("submit", (event) => {
             event.preventDefault();
             const id_input = document.querySelector(".id-input").value;
-            const sec_input = document.querySelector(".sec-option").value;
+            const sec_input = document.querySelector(".sec-input").value;
             const dept_input = document.querySelector(".dept-input").value;
-            if (id_input === "" || sec_input.value === "" || dept_input === "" || id_input!=="12345")  {
+            if (id_input === "" || sec_input === "" || dept_input === "" || id_input!=="12345")  {
                 alert("Check the details");
-            } else if (id_input === "12345" && dept_input !== "") {
+            } else if (id_input === "12345" && sec_input !== "" && dept_input !== "") {
                 admin_form.submit();
             }
 
