@@ -7,15 +7,16 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "1234",
-    database: "test"
+    database:"mydb"
 });
+
 
 
 con.connect(function (err) {
     if (err) res.sendFile(__dirname + "/invalid-page.html");
     console.log("Connected!");
     con.query("CREATE TABLE IF NOT EXISTS new_test_table (RegNo VARCHAR(255) PRIMARY KEY ,Names VARCHAR(255) ,Dept VARCHAR(255) ,Section VARCHAR(255))", (err, succ) => {
-        if (err) res.send("/invalid.html");
+        if (err) res.sendFile(__dirname + "/invalid.html");
         else console.log("table created");
     })
 
