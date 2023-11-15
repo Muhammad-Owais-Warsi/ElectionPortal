@@ -24,16 +24,27 @@
         <h1 id="login-head" style="font-family: Poppins; scale: 200%;">USER LOGIN</h1>
         <i id="login-logo" class="fa-regular fa-user fa-2xl" style="color: #050505;"></i>
             <label for="name"></label>
-            <input type="text" class="name-input" placeholder="Username" id="name" name="username">
+            <input type="text" class="name-input" placeholder="Username" autocomplete="off" id="name" name="username">
 
             <label for="id"></label>
-            <input type="text" class="id-input" placeholder="Registration Id" id="id" name="registerNo">
+            <input type="text" class="id-input" placeholder="Registration Id" autocomplete="off" id="id" name="registerNo">
 
-            <label for="section"></label>
-            <input type="text" class="sec-input" placeholder="Section" id="sec" name="section">
+            <select id="sec" name="section" class="sec-input">
+                <option value="" selected disabled hidden>Choose Section</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="F">F</option>
+            </select>
 
-            <label for="department"></label>
-            <input type="text" class="dept-input" placeholder="Department" id="dept" name="dept">
+            <!-- <label for="section"></label>
+            <input type="text" class="sec-input" placeholder="Section" id="sec" name="section"> -->
+
+            <select id="dept" name="dept" class="dept-input">
+                <option value="" selected disabled hidden>Choose Department </option>
+                <option value="CSE">CSE</option>
+            </select>
+            <!-- <label for="department"></label>
+            <input type="text" class="dept-input" placeholder="Department" id="dept" name="dept"> -->
 
             <button style="font-family: monospace;" class="submit-button" type="submit">SUBMIT</button>
 
