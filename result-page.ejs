@@ -12,8 +12,8 @@
 
   <% var xValues=JSON.stringify(succ.map(item=> item.Names)); %>
     <% var yValues=JSON.stringify(succ.map(item=> item.votingPercent)); %>
-
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+      <h1 style="font-family: Poppins; position: absolute; left: 600px; scale: 150%;">Election Results</h1>
+      <canvas id="myChart" style="width:100%;max-width:900px; position: absolute; top: 200px; left: 300px;"></canvas>
 
       <script>
         // Unescape the JSON strings
