@@ -7,6 +7,32 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.candidate_container {
+    border: 1px solid red;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px; /* Adjust width as needed */
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.vote, .cancel {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cancel {
+    background-color: #f44336;
+}
+
 .candidate_container{
     background-color: dodgerblue;
     padding: 20px;
@@ -38,7 +64,6 @@ body {
 .cancel {
     background-color: #f44336;
 }
-
 .submit {
     padding: 5px 10px;
     background-color: #4CAF50;

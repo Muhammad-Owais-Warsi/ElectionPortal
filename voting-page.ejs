@@ -24,43 +24,39 @@
         <input type="text" hidden id="voter_reg" value="" name="voter_reg">
         <input type="text" hidden id="voter_dept" value="" name="voter_dept">
         <input type="text" hidden id="voter_sec" value="" name="voter_sec">
-
-        <!-- <% succ.forEach((succ, index) => { %>
-            
-            <% const crId = 'cr' + (index + 1); %>
-            <% const rollId = 'r' + (index + 1); %>
-      
-            <div class="cnadidate_container">
-                <input type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
-                <input type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
-            </div>
-        <% }) %> -->
+        
         <div id="candidate-list">
             <% succ.forEach((succ, index)=> { %>
                 <% const crId='cr' + (index + 1); %>
-                    <% const rollId='r' + (index + 1); %>
+                <% const rollId='r' + (index + 1); %>
 
-                        <div class="candidate_container">
-                            <input style="border-radius: 20px; border: none; font-size: x-large; font-family: Poppins; "
-                                type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
-                            <input style="border-radius: 20px; border: none; font-size: x-large; font-family: Poppins;"
-                                type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
-                        </div>
+                <div class="candidate_container">
+                    <input type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
+                    <input type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
+                </div>
             <% }) %>
         </div>
-        <!--<div style="position: absolute; left: 600px;">
+
+
+
+        <!--<div class="cr1-div">
             <input type=" readonly" id="cr1" value="">
-            <input type=" readonly" id="cr2" value="">
-            <input type=" readonly" id="cr3" value="">
-            <input type=" readonly" id="cr4" value="">
-
-
             <input type=" readonly" id="r1" value="">
+        </div>   
+        <div class="cr2-div">
+            <input type=" readonly" id="cr2" value="">
             <input type=" readonly" id="r2" value="">
+        </div>
+        <div class="cr3-div">
+            <input type=" readonly" id="cr3" value="">
             <input type=" readonly" id="r3" value="">
+        </div>
+        <div class="cr4-div">
+            <input type=" readonly" id="cr4" value="">
             <input type=" readonly" id="r4" value="">
+        </div> -->
+            
         
-        </div>-->
 
         <div style="position: absolute; left: 1100px; top: 145px; scale: 180%; font-family: Poppins;">
             <button class="vote" onclick="getName(0)">vote</button>
@@ -117,7 +113,7 @@
             voteButtons.forEach((btn, index) => {
                 btn.disabled = true;
                 btn.style.backgroundColor = "#b9f1bb";
-            });
+            })
         }
 
         function EnableVoteButtons(index) {
@@ -128,7 +124,6 @@
             voteButton.forEach(btn => {
                 btn.disabled = false;
                 btn.style.backgroundColor = "#4CAF50";
-
             })
         }
 
