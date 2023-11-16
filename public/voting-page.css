@@ -1,47 +1,47 @@
-#cr1{
-    position: absolute;
-    top: 250px;
-    left: -200px;
-    
-}
-#cr2{
-    position: absolute;
-    top: 350px;
-    left: -200px;
-}
-#cr3{
-    position: absolute;
-    top: 450px;
-    left: -200px;
-}
-#cr4{
-    position: absolute;
-    top: 550px;
-    left: -200px;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-#roll-head{
-    position: absolute;
-    left: 300px;
+.candidate_container {
+    border: 1px solid red;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px; /* Adjust width as needed */
 }
-#r1{
-    position: absolute;
-    top: 245px;
-    left: 80px;
+.buttons {
+    display: flex;
+    gap: 10px;
 }
-#r2{
-    position: absolute;
-    top: 345px;
-    left: 80px;
 
+.vote, .cancel {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
-#r3{
-    position: absolute;
-    top: 445px;
-    left: 80px;
+
+.cancel {
+    background-color: #f44336;
 }
-#r4{
-    position: absolute;
-    top: 545px;
-    left: 80px;
+
+.submit {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
+
+
+
+

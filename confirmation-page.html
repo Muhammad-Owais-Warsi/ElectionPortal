@@ -24,16 +24,27 @@
         <a id="homepage-link" href="/">Back to homepage</a>
         </div>
 
+        <div id="popup" class="popup-container"></div>
+
 
 
         <script>
+            function showpopup(){
+                document.getElementById("popup").style.display = "block";
+                popup.innerHTML = `${name} having regNo. ${roll}  voted ${final_name} having regNo ${final_reg}`;
+                setTimeout(function() {
+                    document.getElementById("popup").style.display = "none";
+                }, 6000);
+            }
+
+
             const urlParams = new URLSearchParams(window.location.search);
             const name = urlParams.get('name');
             const roll = urlParams.get('reg');
             const final_name = urlParams.get('final_name');
             const final_reg = urlParams.get('final_reg');
-
-            document.write(`<p>${name} having regNo. ${roll}  voted ${final_name} having regNo ${final_reg}  </p>`);
+            showpopup()
+        
         </script>
     </body>
 </html>
