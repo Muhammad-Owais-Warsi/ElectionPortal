@@ -31,8 +31,8 @@
                 <% const rollId='r' + (index + 1); %>
 
                 <div class="candidate_container">
-                    <input type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
-                    <input type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
+                    <input style="border: none; border-radius: 20px;font-family: Poppins;scale:150%; position: absolute; left: 60px; text-align: center;" type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
+                    <input style="border: none; border-radius: 20px;font-family: Poppins;scale:150%; position: absolute; left: 500px; text-align: center;" type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
                 </div>
             <% }) %>
         </div>
@@ -109,7 +109,7 @@
         function disableVoteButtons() {
             event.preventDefault();
             const voteButtons = document.querySelectorAll(".vote");
-            const candidateContainers = document.querySelectorAll(".candidate_container");
+            
             voteButtons.forEach((btn, index) => {
                 btn.disabled = true;
                 btn.style.backgroundColor = "#b9f1bb";
@@ -119,11 +119,15 @@
         function EnableVoteButtons(index) {
             event.preventDefault();
             const candidateContainers = document.querySelectorAll(".candidate_container");
-            candidateContainers[index].style.backgroundColor = "dodgerblue";
+            candidateContainers.forEach(sel => {
+                sel.style.backgroundColor="dodgerblue";
+            })
             const voteButton = document.querySelectorAll(".vote");
+           
             voteButton.forEach(btn => {
                 btn.disabled = false;
                 btn.style.backgroundColor = "#4CAF50";
+                
             })
         }
 
