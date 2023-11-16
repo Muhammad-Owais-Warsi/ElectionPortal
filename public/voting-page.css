@@ -7,6 +7,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+<<<<<<< HEAD
 .candidate_container {
     border: 1px solid red;
     padding: 10px;
@@ -33,7 +34,27 @@ body {
     background-color: #f44336;
 }
 
-.submit {
+=======
+.candidate_container{
+    background-color: dodgerblue;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    border-radius: 20px;
+    position: relative;
+    left: -100px;
+    top: -30px ;    /* Adjust width as needed */
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+
+.vote, .cancel {
     padding: 5px 10px;
     background-color: #4CAF50;
     color: white;
@@ -42,6 +63,24 @@ body {
     cursor: pointer;
 }
 
+.cancel {
+    background-color: #f44336;
+}
+
+>>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0
+.submit {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+<<<<<<< HEAD
+}
 
 
 
+
+=======
+}
+>>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0

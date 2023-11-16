@@ -9,10 +9,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="public/voting-page.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
 </head>
 
 <body>
-
+    <h1 style="font-family: Poppins; position: absolute; top: 40px; left: 400px;">NAMES</h1>
+    <h1 style="font-family: Poppins; position: absolute; top: 40px; left: 700px;">Registration Number </h1>
     <form method="post" action="/voting-page.ejs" id="my_form">
 
         <input type="text" hidden id="final_name" value="" name="final_name">
@@ -21,6 +24,7 @@
         <input type="text" hidden id="voter_reg" value="" name="voter_reg">
         <input type="text" hidden id="voter_dept" value="" name="voter_dept">
         <input type="text" hidden id="voter_sec" value="" name="voter_sec">
+<<<<<<< HEAD
         
         <div id="candidate-list">
             <% succ.forEach((succ, index)=> { %>
@@ -37,6 +41,33 @@
 
 
         <!--<div class="cr1-div">
+=======
+
+        <!-- <% succ.forEach((succ, index) => { %>
+            
+            <% const crId = 'cr' + (index + 1); %>
+            <% const rollId = 'r' + (index + 1); %>
+      
+            <div class="cnadidate_container">
+                <input type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
+                <input type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
+            </div>
+        <% }) %> -->
+        <div id="candidate-list">
+            <% succ.forEach((succ, index)=> { %>
+                <% const crId='cr' + (index + 1); %>
+                    <% const rollId='r' + (index + 1); %>
+
+                        <div class="candidate_container">
+                            <input style="border-radius: 20px; border: none; font-size: x-large; font-family: Poppins; "
+                                type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
+                            <input style="border-radius: 20px; border: none; font-size: x-large; font-family: Poppins;"
+                                type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
+                        </div>
+            <% }) %>
+        </div>
+        <!--<div style="position: absolute; left: 600px;">
+>>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0
             <input type=" readonly" id="cr1" value="">
             <input type=" readonly" id="r1" value="">
         </div>   
@@ -55,27 +86,27 @@
             
         
 
-        <div style="position: absolute; left: 950px; top: 250px;">
+        <div style="position: absolute; left: 1100px; top: 145px; scale: 180%; font-family: Poppins;">
             <button class="vote" onclick="getName(0)">vote</button>
-            <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
+            <button class="cancel" onclick="EnableVoteButtons(0)">cancel</button>
         </div>
 
-        <div style="position: absolute; left: 950px; top: 350px;">
+        <div style="position: absolute; left: 1100px; top: 250px; scale: 180%; font-family: Poppins;">
             <button class="vote" onclick="getName(1)">vote</button>
-            <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
+            <button class="cancel" onclick="EnableVoteButtons(1)">cancel</button>
         </div>
 
-        <div style="position: absolute; left: 950px; top: 450px;">
+        <div style="position: absolute; left: 1100px; top: 355px; scale: 180%; font-family: Poppins;">
             <button class="vote" onclick="getName(2)">vote</button>
-            <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
+            <button class="cancel" onclick="EnableVoteButtons(2)">cancel</button>
         </div>
 
-        <div style="position: absolute; left: 950px; top: 550px;">
+        <div style="position: absolute; left: 1100px; top: 455px; scale: 180%; font-family: Poppins;">
             <button class="vote" onclick="getName(3)">vote</button>
-            <button class="cancel" onclick="EnableVoteButtons()">cancel</button>
+            <button class="cancel" onclick="EnableVoteButtons(3)">cancel</button>
         </div>
 
-        <button style="position: absolute; top: 650px; left: 600px;" type="submit">SUBMIT</button>
+        <button style="position: absolute; top: 600px; left: 470px; scale: 200%; width: 370px; border-radius: 5px; font-family: Poppins;" type="submit" class="submit">SUBMIT</button>
 
     </form>
     <script>
@@ -90,31 +121,45 @@
         document.getElementById("voter_reg").value = reg;
         document.getElementById('voter_dept').value = dept;
         document.getElementById('voter_sec').value = sec;
- 
+
+
 
 
         function getName(index) {
             event.preventDefault();
+            const candidateContainers = document.querySelectorAll(".candidate_container");
+            candidateContainers[index].style.backgroundColor = "#4CAF50";
             document.getElementById("final_name").value = document.getElementById("cr" + (index + 1)).value;
-            document.getElementById("final_reg").value = document.getElementById("r" + (index+1)).value;
+            document.getElementById("final_reg").value = document.getElementById("r" + (index + 1)).value;
             disableVoteButtons()
         }
 
         function disableVoteButtons() {
             event.preventDefault();
-            const voteButton = document.querySelectorAll(".vote");
-            voteButton.forEach(btn => {
+            const voteButtons = document.querySelectorAll(".vote");
+            const candidateContainers = document.querySelectorAll(".candidate_container");
+            voteButtons.forEach((btn, index) => {
                 btn.disabled = true;
                 btn.style.backgroundColor = "#b9f1bb";
+<<<<<<< HEAD
             })
+=======
+            });
+>>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0
         }
 
-        function EnableVoteButtons() {
+        function EnableVoteButtons(index) {
             event.preventDefault();
+            const candidateContainers = document.querySelectorAll(".candidate_container");
+            candidateContainers[index].style.backgroundColor = "dodgerblue";
             const voteButton = document.querySelectorAll(".vote");
             voteButton.forEach(btn => {
                 btn.disabled = false;
                 btn.style.backgroundColor = "#4CAF50";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0
             })
         }
 
