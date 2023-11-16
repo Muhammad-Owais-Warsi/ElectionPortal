@@ -1,47 +1,49 @@
-#cr1{
-    position: absolute;
-    top: 250px;
-    left: -200px;
-    
-}
-#cr2{
-    position: absolute;
-    top: 350px;
-    left: -200px;
-}
-#cr3{
-    position: absolute;
-    top: 450px;
-    left: -200px;
-}
-#cr4{
-    position: absolute;
-    top: 550px;
-    left: -200px;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-#roll-head{
-    position: absolute;
-    left: 300px;
+.candidate_container{
+    background-color: dodgerblue;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    border-radius: 20px;
+    position: relative;
+    left: -100px;
+    top: -30px ;    /* Adjust width as needed */
 }
-#r1{
-    position: absolute;
-    top: 245px;
-    left: 80px;
-}
-#r2{
-    position: absolute;
-    top: 345px;
-    left: 80px;
 
+.buttons {
+    display: flex;
+    gap: 10px;
 }
-#r3{
-    position: absolute;
-    top: 445px;
-    left: 80px;
+
+
+.vote, .cancel {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
-#r4{
-    position: absolute;
-    top: 545px;
-    left: 80px;
+
+.cancel {
+    background-color: #f44336;
+}
+
+.submit {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
