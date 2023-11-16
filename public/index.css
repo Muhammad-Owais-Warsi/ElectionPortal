@@ -149,6 +149,20 @@ li a:hover{
 #owais-git:hover{
     cursor: pointer;
 }
+#owais-link{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 2250px;
+    left: 700px;
+}
+#owais-X{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 2250px;
+    left: 750px;
+}
 #owais-pic{
     position: absolute;
     border-radius: 50%;
@@ -198,6 +212,21 @@ li a:hover{
     cursor: pointer;
 }
 
+#deboneil-link{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 2700px;
+    left: 700px;
+}
+
+#deboneil-X{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 2700px;
+    left: 750px;
+}
 #deboneil-pic{
     position: absolute;
     border-radius: 50%;
@@ -241,6 +270,15 @@ li a:hover{
     top: 3150px;
     left: 650px;
 }
+
+#aditya-X{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 3150px;
+    left: 700px;
+}
+
 #aditya-pic{
     position: absolute;
     border-radius: 50%;
@@ -283,6 +321,20 @@ li a:hover{
     top: 3550px;
     left: 650px;
 }
+#anirban-X{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 3550px;
+    left: 750px;
+}
+#anirban-link{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 3550px;
+    left: 700px;
+}
 
 #anirban-pic{
     position: absolute;
@@ -318,6 +370,14 @@ li a:hover{
     height: 40px;
     top: 3950px;
     left: 650px;
+    
+}
+#nitin-link{
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    top: 3950px;
+    left: 700px;
     
 }
 #nitin-pic{
