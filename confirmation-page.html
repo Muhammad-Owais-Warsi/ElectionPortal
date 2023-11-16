@@ -32,7 +32,7 @@
         <script>
             function showpopup(){
                 document.getElementById("popup").style.display = "block";
-                popup.innerHTML = `${name} having regNo. ${roll}  voted ${final_name} having regNo ${final_reg}`;
+                popup.innerHTML = `${name} [${roll}] has voted ${final_name} [${final_reg}]`;
                 setTimeout(function() {
                     document.getElementById("popup").style.display = "none";
                 }, 6000);

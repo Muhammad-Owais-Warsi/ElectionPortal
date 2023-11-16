@@ -3,7 +3,7 @@
     font-size: 100px;
     position: absolute;
     left: 650px;
-    bottom: 550px;
+    bottom: 530px;
 }
 #faq-line{
     font-family: Poppins;
@@ -63,25 +63,31 @@
     font-family: Poppins;
 }
 
-.active, .accordion:hover{
+.accordion:active{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+.accordion:hover{
     background-color: #e0e0e0;
-    color: rgb(0, 0, 0);
+    color: black;
 }
 .panel{
     display: none;
-    background-color: rgb(0, 0, 0);
+    background-color: antiquewhite;
     overflow: hidden;
     padding: 0 18px;
-    color:#e0e0ee;
-    width: 44.70%;
+    color:#000000;
+    width: 44.6%;
     font-family: Poppins;
+    max-height: fit-content;
 }
 #grouping-panel{
-    width: 44.2%;
+    width: 43.9%;
     position: absolute;
     top: 350px;
     left: 680px;
     scale: 150%;
+
 }
 ::-webkit-scrollbar{
  width: 12px;

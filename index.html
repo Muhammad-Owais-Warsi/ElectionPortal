@@ -35,6 +35,7 @@
         <h3 id="paragraph">Welcome to our online voting platform! At <span style="color: dodgerblue;"> CR Election Portal </span>, we're passionate about making the democratic process accessible to everyone. Our user-friendly platform prioritizes security and convenience, allowing you to cast your vote from anywhere. Embracing the power of technology, we aim to enhance civic engagement and create a more connected community. Join us in redefining the way we participate in elections, one vote at a time!</h3>
         <a id="vote-link" href="login-page.html"><button id="vote-button">Vote Now</button></a>
 
+
         <h1 id="help-header">Steps For New Users To Vote</h1>
         <div id="help-list">
             <br>
@@ -55,6 +56,9 @@
             <h3>> For further queries, check out the FAQ section</h3>
             <br>
             <h3></h3>
+        </div>
+        <div>
+            <video id="help-video" src="public/E-Election Portal - Google Chrome 2023-11-17 01-30-30.mp4" muted loop autoplay   style="position: absolute; top: 950px; left: 500px; scale: 45%;"></video>
         </div>
 
         <h1 id="credit-head";>OUR TEAM</h1>
@@ -113,6 +117,9 @@
        
         
         
-        <script src="" async defer></script>
+        <script src="" async defer>
+            const video = document.getElementById("help-video");
+            video.playbackRate = 2;
+        </script>
     </body>
 </html>
