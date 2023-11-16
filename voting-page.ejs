@@ -24,7 +24,6 @@
         <input type="text" hidden id="voter_reg" value="" name="voter_reg">
         <input type="text" hidden id="voter_dept" value="" name="voter_dept">
         <input type="text" hidden id="voter_sec" value="" name="voter_sec">
-<<<<<<< HEAD
         
         <div id="candidate-list">
             <% succ.forEach((succ, index)=> { %>
@@ -41,33 +40,6 @@
 
 
         <!--<div class="cr1-div">
-=======
-
-        <!-- <% succ.forEach((succ, index) => { %>
-            
-            <% const crId = 'cr' + (index + 1); %>
-            <% const rollId = 'r' + (index + 1); %>
-      
-            <div class="cnadidate_container">
-                <input type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
-                <input type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
-            </div>
-        <% }) %> -->
-        <div id="candidate-list">
-            <% succ.forEach((succ, index)=> { %>
-                <% const crId='cr' + (index + 1); %>
-                    <% const rollId='r' + (index + 1); %>
-
-                        <div class="candidate_container">
-                            <input style="border-radius: 20px; border: none; font-size: x-large; font-family: Poppins; "
-                                type="text" readonly id="<%= crId %>" value="<%= succ.Names %>" name="<%= crId %>">
-                            <input style="border-radius: 20px; border: none; font-size: x-large; font-family: Poppins;"
-                                type="text" readonly id="<%= rollId %>" value="<%= succ.RegNo %>" name="<%= rollId %>">
-                        </div>
-            <% }) %>
-        </div>
-        <!--<div style="position: absolute; left: 600px;">
->>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0
             <input type=" readonly" id="cr1" value="">
             <input type=" readonly" id="r1" value="">
         </div>   
@@ -141,11 +113,7 @@
             voteButtons.forEach((btn, index) => {
                 btn.disabled = true;
                 btn.style.backgroundColor = "#b9f1bb";
-<<<<<<< HEAD
             })
-=======
-            });
->>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0
         }
 
         function EnableVoteButtons(index) {
@@ -156,10 +124,6 @@
             voteButton.forEach(btn => {
                 btn.disabled = false;
                 btn.style.backgroundColor = "#4CAF50";
-<<<<<<< HEAD
-=======
-
->>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0
             })
         }
 

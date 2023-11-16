@@ -7,7 +7,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-<<<<<<< HEAD
 .candidate_container {
     border: 1px solid red;
     padding: 10px;
@@ -34,7 +33,6 @@ body {
     background-color: #f44336;
 }
 
-=======
 .candidate_container{
     background-color: dodgerblue;
     padding: 20px;
@@ -66,8 +64,6 @@ body {
 .cancel {
     background-color: #f44336;
 }
-
->>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0
 .submit {
     padding: 5px 10px;
     background-color: #4CAF50;
@@ -75,12 +71,4 @@ body {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-<<<<<<< HEAD
 }
-
-
-
-
-=======
-}
->>>>>>> 2655f5013e3e81bfdda098f517f1061f6cbbcad0
