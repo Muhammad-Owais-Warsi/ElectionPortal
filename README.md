@@ -46,6 +46,7 @@ To use this project locally, follow these steps:
 - Node.js
 - Express.js
 - MySQL
+- EJS
 
 ## Contributors
 - [Muhammad Owais Warsi](https://github.com/Muhammad-Owais-Warsi)
