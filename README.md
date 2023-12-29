@@ -1,3 +1,5 @@
+# ****** PROJECT IS STILL UNDER DEVELOPEMENT ******
+
 # E-Election Portal
 
 ## Description
