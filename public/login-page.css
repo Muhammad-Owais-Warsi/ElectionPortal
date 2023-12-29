@@ -27,6 +27,13 @@
     font-family: monospace;
     font-size: xx-large; 
 }
+
+input.email-input {
+    position: relative;
+    top: 436px;
+    /* size: a4; */
+    font-size: xx-large;
+}
 .sec-input{
     position: absolute;
     top: 370px;

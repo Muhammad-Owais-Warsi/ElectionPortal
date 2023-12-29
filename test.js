@@ -1,14 +1,19 @@
 const mysql = require('mysql');
 const express = require('express');
 const ejs = require('ejs');
+const nodemailer = require('nodemailer');
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 
 
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "1234",
-    database:"test"
-    
+    database: "test"
+
 });
 
 
@@ -45,9 +50,10 @@ app.post("/login-page.html", (req, res) => {
     const name = req.body.username;
     const dept = req.body.dept;
     const section = req.body.section;
+    const email = req.body.email;
 
 
-    const checkQuery = 'SELECT RegNo FROM new_test_table WHERE RegNo = (?)';
+    const checkQuery = 'SELECT RegNo FROM new_test_table WHERE RegNo = (?)'; // we have to check according to sections too.
     con.query(checkQuery, [regNo], (err, succ) => {
         if (err) res.send("/invalid.html")
         else {
@@ -56,7 +62,7 @@ app.post("/login-page.html", (req, res) => {
             }
             else {
 
-                res.redirect(`/voting-page.ejs?name=${name}&reg=${regNo}&dept=${dept}&sec=${section}`);
+                res.redirect(`/voting-page.ejs?name=${name}&reg=${regNo}&dept=${dept}&sec=${section}&email=${email}`);
 
             }
         }
@@ -80,10 +86,11 @@ app.post("/voting-page.ejs", (req, res) => {
     const reg = req.body.voter_reg;
     const dept = req.body.voter_dept;
     const sec = req.body.voter_sec;
+    const email = req.body.voter_email;
 
-    const insertQuery = 'INSERT INTO new_test_table (RegNo, Names, Dept, Section) VALUES (?, ?, ?, ?)';
+    const insertQuery = 'INSERT INTO new_test_table (RegNo, Names, Dept, Section,Email) VALUES (?, ?, ?, ?, ?)';
 
-    con.query(insertQuery, [reg, name, dept, sec], (err, succ) => {
+    con.query(insertQuery, [reg, name, dept, sec, email], (err, succ) => {
         if (err) res.sendFile(__dirname + "/vote-submitted.html")
         else {
             console.log("inserted");
@@ -92,7 +99,7 @@ app.post("/voting-page.ejs", (req, res) => {
                 if (err) res.sendFile(__dirname + "/invalid-page.html");
                 else console.log("crUpdated")
             })
-            res.redirect(`/confirmation-page.html?name=${name}&reg=${reg}&final_name=${final_name}&final_reg=${final_reg}`);
+            res.redirect(`/confirmation-page.html?name=${name}&reg=${reg}&final_name=${final_name}&final_reg=${final_reg}&email=${email}`);
         }
     })
 
@@ -120,7 +127,80 @@ app.get("/voting-page.ejs", (req, res) => {
 
 app.get("/confirmation-page.html", (req, res) => {
 
-    res.sendFile(__dirname + "/confirmation-page.html")
+    res.sendFile(__dirname + "/confirmation-page.html");
+
+    try {
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'warsimuhammadowais@gmail.com',
+                pass: process.env.pass // Make sure process.env.pass is properly configured
+            },
+            authMethod:'PLAIN'
+        });
+
+        var mailOptions = {
+            from: 'warsimuhammadowais@gmail.com',
+            to:   `${req.query.email}`,
+            subject: 'Vote Confirmed',
+            html:  
+            `<html>
+                < head >
+                <style>
+                    /* Define your CSS styles here */
+                    body {
+                        font - family: Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    padding: 20px;
+                    }
+                    .container {
+                        max - width: 600px;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    padding: 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+                    h1 {
+                        color: #333;
+                    }
+                    p {
+                        color: #666;
+                    }
+                    .confirmation-msg {
+                        font - size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                    }
+                </style>
+            </head >
+            <body>
+                <div class="container">
+                    <h1>Vote Confirmation</h1>
+                    <div class="confirmation-msg">
+                        <p>Your vote has been confirmed!</p>
+                    </div>
+                    <p>Dear ${req.query.name},</p>
+                    <p>Thank you for participating in the voting process. Your vote has been successfully received and recorded.</p>
+                    <p>For any inquiries or concerns, please contact us.</p>
+                    <p>Best Regards,<br />Election Committee</p>
+                </div>
+            </body>
+            </html >
+            `
+        };
+    
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.error(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+    } catch (err) {
+        console.error('An error occurred:', err);
+    }
+    
 })
 
 
