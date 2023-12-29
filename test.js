@@ -135,7 +135,8 @@ app.get("/confirmation-page.html", (req, res) => {
             service: 'gmail',
             auth: {
                 user: 'warsimuhammadowais@gmail.com',
-                pass: process.env.pass // Make sure process.env.pass is properly configured
+                pass: process.env.file //make your env file
+                 // Make sure process.env.pass is properly configured
             },
             authMethod:'PLAIN'
         });
@@ -146,35 +147,50 @@ app.get("/confirmation-page.html", (req, res) => {
             subject: 'Vote Confirmed',
             html:  
             `<html>
-                < head >
+            <head>
                 <style>
                     /* Define your CSS styles here */
                     body {
-                        font - family: Arial, sans-serif;
-                    background-color: #f4f4f4;
-                    padding: 20px;
+                        font-family: Arial, sans-serif;
+                        background-color: #f4f4f4;
+                        padding: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
                     }
                     .container {
-                        max - width: 600px;
-                    margin: 0 auto;
-                    background-color: #fff;
-                    padding: 20px;
-                    border-radius: 5px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        width: 400px;
+                        background-color: #ffffff;
+                        padding: 20px;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                     }
                     h1 {
                         color: #333;
+                        text-align: center;
+                        margin-bottom: 20px;
                     }
                     p {
                         color: #666;
+                        line-height: 1.5;
                     }
                     .confirmation-msg {
-                        font - size: 18px;
-                    font-weight: bold;
-                    margin-bottom: 20px;
+                        font-size: 18px;
+                        font-weight: bold;
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+                    .footer {
+                        text-align: center;
+                        margin-top: 20px;
+                    }
+                    .footer a {
+                        color: #007bff;
+                        text-decoration: none;
                     }
                 </style>
-            </head >
+            </head>
             <body>
                 <div class="container">
                     <h1>Vote Confirmation</h1>
@@ -183,11 +199,11 @@ app.get("/confirmation-page.html", (req, res) => {
                     </div>
                     <p>Dear ${req.query.name},</p>
                     <p>Thank you for participating in the voting process. Your vote has been successfully received and recorded.</p>
-                    <p>For any inquiries or concerns, please contact us.</p>
-                    <p>Best Regards,<br />Election Committee</p>
+                    <p>For any inquiries or concerns, please <a href="#">contact us</a>.</p>
+                    <p class="footer">Best Regards,<br />Election Committee</p>
                 </div>
             </body>
-            </html >
+            </html>
             `
         };
     
